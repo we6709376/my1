@@ -1,0 +1,31 @@
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,abbr,article,aside,command,details,figcaption,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,summary{margin:0;padding:0;}
+li{list-style:none;}
+a{text-decoration:none;}
+img{border:0;}
+html{width:100%;}
+body{font-family:"微软雅黑";width:1280px;}
+.sanjiao{height:0;width:0;border:4px solid #eeeeee;border-top:4px solid #767676;border-bottom:none;}
+em{font-style:normal;}
+.left{float:left;}
+.clear:after{content:"";display:block;height:0;clear:both;}
+img{border:0;font-size:0;}
+
+#header{border-top:2px solid #aaaaab;width:100%;height:36px;background:#f7f7f7;margin-top:10px ;border-bottom:2px solid #e7e7e7 ;}
+#header .headerk{margin:0 auto;height:100%;}
+#header .header-l{float:left;margin-left:30px;}
+#header .header-l li{float:left;line-height:36px;font-size: 14px;padding-right:20px;}
+#header .headerk li a{color:#767676;}
+#header .header-r{float: right;margin-right:40px;}
+#header .header-r li{float:left;line-height:36px;font-size: 14px;padding-left:20px;}
+
+#search .search-r,#search .search-m,#search .search-l{float: left;}
+#search .search-l{margin-left:54px;margin-top: 30px;}
+#search .search-m{margin-left: 140px;margin-top:30px ;}
+#search .search-m input{border:none;height:34px;display: block;float: left;}
+#search .search-m input[type="text"]{width:395px;}
+#search .search-m input[type="button"]{width:95px;background-color: red;}
+#search .search-m form{border:2px solid red;}
+#search .search-m ul li{float: left;font-size: 14px;padding-left: 16px;}
+#search .search-m li a{color:#999999;}
+#search .search-r{border:2px solid #d8d6d6;margin-left:57px ;margin-top: 30px;width:160px;height:30px;text-align: center;}
+#search .search-r a{color:red;line-height: 30px;}
