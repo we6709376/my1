@@ -30,6 +30,7 @@
         color: red; }
     #banner .search .search-erji {
       position: absolute;
+      z-index: 10;
       left: 30px;
       top: 40px;
       width: 216px; }
@@ -40,17 +41,23 @@
           display: block;
           width: 180px;
           line-height: 54px;
-          color: #333333;
+          color: #AAAAAB;
           border-bottom: 1px solid white; }
         #banner .search .search-erji li a:hover {
           color: red; }
     #banner .search .searchside {
+      display: none;
+      z-index: 10;
       position: absolute;
       background: white;
-      width: 800px;
+      width: 950px;
       height: 495px;
       left: 246px;
       top: 40px; }
+      #banner .search .searchside .imgr {
+        position: absolute;
+        right: 10px;
+        top: 10px; }
       #banner .search .searchside .l1 {
         display: none; }
         #banner .search .searchside .l1 .ul1 li {
@@ -68,7 +75,8 @@
         #banner .search .searchside .l1 .ul3 li, #banner .search .searchside .l1 .ul4 li {
           line-height: 42px; }
         #banner .search .searchside .l1 ul {
-          width: 130px; }
+          width: 130px;
+          margin-left: 35px; }
           #banner .search .searchside .l1 ul li {
             text-indent: 10px;
             background: url(../img/d1.jpg) no-repeat 3px center; }
@@ -79,16 +87,72 @@
             line-height: 50px;
             color: #333333;
             border-bottom: 1px solid #767676; }
-      #banner .search .searchside .l2 ul {
-        margin-top: 30px;
-        width: 164px; }
-        #banner .search .searchside .l2 ul .t1 {
-          font-size: 14px;
-          line-height: 46px; }
+      #banner .search .searchside .l2 {
+        display: none;
+        margin-left: 30px; }
+        #banner .search .searchside .l2 ul {
+          margin-top: 30px;
+          width: 230px; }
+          #banner .search .searchside .l2 ul .t1 {
+            width: 160px;
+            font-size: 14px;
+            line-height: 46px;
+            border-bottom: 1px solid #BABABA; }
+          #banner .search .searchside .l2 ul li {
+            padding: 20px 0; }
+          #banner .search .searchside .l2 ul a {
+            padding-right: 10px;
+            color: #b3b3b3;
+            line-height: 36px; }
+      #banner .search .searchside .l3 {
+        display: none;
+        margin-left: 30px; }
+        #banner .search .searchside .l3 ul {
+          margin-top: 30px;
+          margin-right: 80px; }
+          #banner .search .searchside .l3 ul li {
+            margin-bottom: 40px; }
+      #banner .search .searchside .l4 {
+        display: none;
+        margin-left: 30px; }
+        #banner .search .searchside .l4 ul {
+          margin-top: 35px;
+          margin-right: 50px; }
+          #banner .search .searchside .l4 ul li {
+            margin-bottom: 40px; }
+            #banner .search .searchside .l4 ul li img {
+              width: 40px;
+              height: 40px; }
+        #banner .search .searchside .l4 dd {
+          width: 170px;
+          padding-left: 10px;
+          line-height: 20px; }
+        #banner .search .searchside .l4 .fontcenter {
+          line-height: 43px; }
+      #banner .search .searchside .l5 {
+        display: none;
+        margin-left: 30px; }
+        #banner .search .searchside .l5 ul {
+          margin-top: 30px;
+          margin-left: 20px; }
+          #banner .search .searchside .l5 ul li {
+            margin-bottom: 40px; }
+        #banner .search .searchside .l5 dl {
+          height: 44px;
+          width: 220px; }
+        #banner .search .searchside .l5 dt {
+          width: 44px;
+          text-align: center; }
+        #banner .search .searchside .l5 dd {
+          line-height: 34px;
+          text-indent: 20px; }
+      #banner .search .searchside .l2 dl, #banner .search .searchside .l3 dl, #banner .search .searchside .l4 dl, #banner .search .searchside .l5 dl {
+        overflow: hidden; }
+      #banner .search .searchside .l2 dt, #banner .search .searchside .l2 dd, #banner .search .searchside .l3 dt, #banner .search .searchside .l3 dd, #banner .search .searchside .l4 dt, #banner .search .searchside .l4 dd, #banner .search .searchside .l5 dt, #banner .search .searchside .l5 dd {
+        float: left; }
       #banner .search .searchside ul {
         float: left;
-        font-size: 12px;
-        margin-left: 35px; }
+        font-size: 12px; }
         #banner .search .searchside ul a {
           color: #333333; }
         #banner .search .searchside ul a:hover {
