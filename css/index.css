@@ -2,7 +2,9 @@
   width: 100%;
   font-size: 14px; }
   #banner .search {
-    position: relative; }
+    position: relative;
+    border-bottom: 2px solid #282727;
+    box-sizing: border-box; }
     #banner .search .searchl {
       font-weight: bold;
       float: left;
@@ -32,7 +34,7 @@
       position: absolute;
       z-index: 10;
       left: 30px;
-      top: 40px;
+      top: 42px;
       width: 216px; }
       #banner .search .search-erji li {
         background: rgba(250, 250, 250, 0.1); }
@@ -53,7 +55,7 @@
       width: 950px;
       height: 495px;
       left: 246px;
-      top: 40px; }
+      top: 42px; }
       #banner .search .searchside .imgr {
         position: absolute;
         right: 10px;
