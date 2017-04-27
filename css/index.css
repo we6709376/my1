@@ -33,11 +33,14 @@
     #banner .search .search-erji {
       position: absolute;
       z-index: 10;
+      padding-top: 5px;
+      padding-bottom: 5px;
       left: 30px;
       top: 42px;
       width: 216px; }
       #banner .search .search-erji li {
-        background: rgba(250, 250, 250, 0.1); }
+        background: rgba(250, 250, 250, 0.1);
+        box-sizing: border-box; }
         #banner .search .search-erji li a {
           margin: 0 auto;
           display: block;
@@ -53,13 +56,16 @@
       position: absolute;
       background: white;
       width: 950px;
-      height: 495px;
+      height: 510px;
       left: 246px;
       top: 42px; }
       #banner .search .searchside .imgr {
         position: absolute;
         right: 10px;
         top: 10px; }
+      #banner .search .searchside div {
+        width: 100%;
+        height: 100%; }
       #banner .search .searchside .l1 {
         display: none; }
         #banner .search .searchside .l1 .ul1 li {
@@ -67,7 +73,7 @@
         #banner .search .searchside .l1 .ul2 li {
           background: none; }
         #banner .search .searchside .l1 .ul2 dl {
-          margin-top: 16px;
+          padding-top: 16px;
           line-height: 20px; }
         #banner .search .searchside .l1 .ul2 dt {
           background: url(../img/d1.jpg) no-repeat 3px center; }
@@ -91,7 +97,7 @@
             border-bottom: 1px solid #767676; }
       #banner .search .searchside .l2 {
         display: none;
-        margin-left: 30px; }
+        padding-left: 30px; }
         #banner .search .searchside .l2 ul {
           margin-top: 30px;
           width: 230px; }
@@ -108,7 +114,7 @@
             line-height: 36px; }
       #banner .search .searchside .l3 {
         display: none;
-        margin-left: 30px; }
+        padding-left: 30px; }
         #banner .search .searchside .l3 ul {
           margin-top: 30px;
           margin-right: 80px; }
@@ -116,7 +122,7 @@
             margin-bottom: 40px; }
       #banner .search .searchside .l4 {
         display: none;
-        margin-left: 30px; }
+        padding-left: 30px; }
         #banner .search .searchside .l4 ul {
           margin-top: 35px;
           margin-right: 50px; }
@@ -133,10 +139,10 @@
           line-height: 43px; }
       #banner .search .searchside .l5 {
         display: none;
-        margin-left: 30px; }
+        padding-left: 30px; }
         #banner .search .searchside .l5 ul {
-          margin-top: 30px;
-          margin-left: 20px; }
+          padding-top: 30px;
+          padding-left: 20px; }
           #banner .search .searchside .l5 ul li {
             margin-bottom: 40px; }
         #banner .search .searchside .l5 dl {
@@ -148,9 +154,46 @@
         #banner .search .searchside .l5 dd {
           line-height: 34px;
           text-indent: 20px; }
-      #banner .search .searchside .l2 dl, #banner .search .searchside .l3 dl, #banner .search .searchside .l4 dl, #banner .search .searchside .l5 dl {
+      #banner .search .searchside .l6 {
+        display: none;
+        padding-left: 35px;
+        padding-top: 30px; }
+        #banner .search .searchside .l6 dl {
+          width: 230px;
+          margin-bottom: 40px; }
+        #banner .search .searchside .l6 dt {
+          text-align: center;
+          width: 50px;
+          height: 50px; }
+        #banner .search .searchside .l6 dd {
+          line-height: 40px; }
+      #banner .search .searchside .l7, #banner .search .searchside .l8 {
+        display: none;
+        padding-top: 35px;
+        padding-left: 30px; }
+        #banner .search .searchside .l7 dl, #banner .search .searchside .l8 dl {
+          width: 230px;
+          margin-bottom: 45px; }
+        #banner .search .searchside .l7 dt, #banner .search .searchside .l8 dt {
+          width: 50px;
+          text-align: center; }
+        #banner .search .searchside .l7 dd, #banner .search .searchside .l8 dd {
+          line-height: 30px; }
+      #banner .search .searchside .l9 {
+        display: none;
+        padding-top: 35px;
+        padding-left: 30px; }
+        #banner .search .searchside .l9 dl {
+          width: 230px;
+          margin-bottom: 45px; }
+        #banner .search .searchside .l9 dt {
+          width: 80px;
+          text-align: center; }
+        #banner .search .searchside .l9 dd {
+          line-height: 30px; }
+      #banner .search .searchside .l2 dl, #banner .search .searchside .l3 dl, #banner .search .searchside .l4 dl, #banner .search .searchside .l5 dl, #banner .search .searchside .l6 dl, #banner .search .searchside .l7 dl, #banner .search .searchside .l8 dl, #banner .search .searchside .l9 dl {
         overflow: hidden; }
-      #banner .search .searchside .l2 dt, #banner .search .searchside .l2 dd, #banner .search .searchside .l3 dt, #banner .search .searchside .l3 dd, #banner .search .searchside .l4 dt, #banner .search .searchside .l4 dd, #banner .search .searchside .l5 dt, #banner .search .searchside .l5 dd {
+      #banner .search .searchside .l2 dt, #banner .search .searchside .l2 dd, #banner .search .searchside .l3 dt, #banner .search .searchside .l3 dd, #banner .search .searchside .l4 dt, #banner .search .searchside .l4 dd, #banner .search .searchside .l5 dt, #banner .search .searchside .l5 dd, #banner .search .searchside .l6 dt, #banner .search .searchside .l6 dd, #banner .search .searchside .l7 dt, #banner .search .searchside .l7 dd, #banner .search .searchside .l8 dt, #banner .search .searchside .l8 dd, #banner .search .searchside .l9 dt, #banner .search .searchside .l9 dd {
         float: left; }
       #banner .search .searchside ul {
         float: left;
@@ -159,5 +202,98 @@
           color: #333333; }
         #banner .search .searchside ul a:hover {
           color: red; }
+
+#bannerimg {
+  position: relative;
+  width: 100% px;
+  overflow: hidden; }
+  #bannerimg #ulbox {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 5; }
+    #bannerimg #ulbox li {
+      float: left;
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%; }
+
+#maintop {
+  background: #f7f7f8;
+  width: 100%;
+  padding-top: 10px; }
+  #maintop .maint {
+    background: white;
+    margin: 0 auto;
+    width: 1200px; }
+    #maintop .maint .maint-t li {
+      cursor: pointer;
+      position: relative;
+      float: left;
+      margin-right: 8px; }
+      #maintop .maint .maint-t li img, #maintop .maint .maint-t li span {
+        width: 230px;
+        height: 145px; }
+      #maintop .maint .maint-t li span {
+        left: 0px;
+        top: 0px;
+        display: none;
+        position: absolute;
+        background: rgba(240, 240, 240, 0.3); }
+    #maintop .maint .maint-t li:hover span {
+      display: block; }
+  #maintop .maintb {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 12px;
+    height: 160px; }
+    #maintop .maintb a {
+      font-size: 12px;
+      color: #333333; }
+    #maintop .maintb a:hover {
+      color: red; }
+    #maintop .maintb .mainb-r {
+      background: white;
+      width: 720px; }
+      #maintop .maintb .mainb-r .mt {
+        height: 42px; }
+        #maintop .maintb .mainb-r .mt img {
+          margin-top: 10px;
+          margin-left: 20px;
+          float: left; }
+        #maintop .maintb .mainb-r .mt p {
+          margin-top: 16px;
+          margin-right: 20px;
+          float: right; }
+      #maintop .maintb .mainb-r .mb img {
+        width: 165px;
+        height: 85px; }
+      #maintop .maintb .mainb-r .mb dl, #maintop .maintb .mainb-r .mb ul {
+        float: left; }
+      #maintop .maintb .mainb-r .mb dl {
+        margin: 15px 30px; }
+      #maintop .maintb .mainb-r .mb ul {
+        margin-top: 30px;
+        line-height: 25px; }
+    #maintop .maintb .mainb-m {
+      margin-left: 3px;
+      background: white;
+      width: 240px; }
+      #maintop .maintb .mainb-m dt {
+        margin-top: 14px; }
+        #maintop .maintb .mainb-m dt h3 {
+          font-weight: normal;
+          float: left;
+          margin-left: 10px; }
+        #maintop .maintb .mainb-m dt p {
+          float: right;
+          margin-right: 18px; }
+      #maintop .maintb .mainb-m dd {
+        margin-top: 15px; }
+        #maintop .maintb .mainb-m dd li {
+          line-height: 25px; }
+    #maintop .maintb .mainb-r, #maintop .maintb .mainb-m, #maintop .maintb .mainb-l {
+      float: left; }
 
 /*# sourceMappingURL=index.css.map */

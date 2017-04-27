@@ -40,11 +40,12 @@ function Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id){
 	}
 	//切换图片
 	this.changeimg=function(ord){
-		//图片未切换完 将图片直接移动完成
 		if(this.secondimg==ord){
 			return;
 		}
-		let imgs=$(this.id).children;
+		//图片未切换完 将图片直接移动完成
+		
+		let imgs=$(this.id)[0].children;
 		imgs[this.firstimg].style.left=-this.boxwidth+"px";
 		imgs[this.secondimg].style.left="0px";
 		clearInterval(this.mytimer);
@@ -80,7 +81,7 @@ function Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id){
 	this.changeli=function(ord){
 		let ulbox=$(this.id)[0].children[0].children;
 		for(let i=0;i<ulbox.length;i++){
-			ulbox[i].style.backgroundColor="rgba(0,0,0,0)";
+			ulbox[i].style.backgroundColor="rgba(200,200,200,0.8)";
 		}
 		if(ord>=ulbox.length){
 			ord=0;
@@ -95,6 +96,7 @@ function Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id){
 		}
 	}
 	this.initUI=function(){
+		this.changeli(0);
 		$(this.id)[0].style.width=boxwidth+"px";
 		$(this.id)[0].style.height=boxheight+"px";
 		for(let i=1;i<=imgnum;i++){
@@ -121,7 +123,7 @@ function Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id){
 		let lichilds=$("#ulbox")[0].children;
 		for(let i=0;i<lichilds.length;i++){
 			lichilds[i].ord=i+1;
-			lichilds[i].onmouseover=function(){
+			lichilds[i].onclick=function(){
 				that.changeimg(this.ord);
 			}
 		}
