@@ -1,0 +1,28 @@
+#header{
+    width:100%;
+    img{
+        padding-top: 25px;
+        padding-left:42px ;
+        width:130px;
+        height:50px;
+    }
+    ul{
+        float: right;
+        margin-right: 52px;
+        li{
+            float: left;
+            font-size: 14px;
+            line-height: 40px;
+            color:#b7a4ac;
+            margin:5px;
+            a{
+               color:#b7a4ac;
+               border-bottom: 1px solid #b7a4ac; 
+            }
+            a:hover{
+               color:#21b3e4;
+               border-color:#21b3e4; 
+            }
+        }
+    }
+}

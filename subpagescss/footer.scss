@@ -1,0 +1,93 @@
+#banner{
+    width:100%;
+    background:#f2f2f2 ;
+    a{
+        color:#666666;
+    }
+    a:hover{
+        color:red;
+    }
+    .bantop{
+        width:100%;
+        
+        border-bottom:2px solid #e5e5e5;
+        ul{
+            width:1200px;
+            margin: 0 auto;
+        }
+        li{
+            float: left;
+            width:270px;
+            line-height: 80px;
+            font-size: 16px;
+            color:#666666;
+            
+        }
+    }
+    .banmid{
+        width: 100% ;
+        font-size: 12px;
+        .banmidk{
+            padding-top: 44px;
+            width:1200px;
+            margin:0 auto;
+        }
+        
+        ul,.banmid-l{
+            float: left;
+            width:160px;
+        }
+        .banmid-l{
+            margin-left:110px;
+            margin-top:20px;
+            dd{
+                margin-top:20px ;
+                img,div{
+                    float: left;
+                }
+            }
+            div{
+                margin-left: 10px;
+            }
+            a{
+                color:red;
+                border-bottom:1px solid rgba(0,0,0,0);
+            }
+            a:hover{
+                border-bottom:1px solid red; 
+            }
+        }
+        .banl1{
+            font-weight:bold ;
+            line-height: 27px;
+            color:black;
+        }
+        li{
+             line-height: 20px;
+        }
+        padding-bottom:60px;
+    }
+    .banbot{
+        width:1200px;
+        margin:0 auto ;
+        font-size: 12px;
+        dt{
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 26px;
+        }
+        dd{
+            a{
+                margin-right: 5px;
+            }
+            line-height:20px ;
+        }
+        span{
+            display: block;
+           line-height: 32px;
+           border-top:2px solid #e3e3e3;
+           color:#666666;
+           padding-bottom: 8px;
+        }
+    }
+}

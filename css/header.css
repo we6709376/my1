@@ -15,6 +15,7 @@ img{border:0;font-size:0;display:block;}
 #header .header-l{float:left;margin-left:30px;}
 #header .header-l li{float:left;line-height:36px;font-size: 14px;padding-right:20px;}
 #header .headerk li a{color:#767676;}
+#header .headerk li a:hover{color:red;}
 #header .header-r{float: right;margin-right:40px;}
 #header .header-r li{float:left;line-height:36px;font-size: 14px;padding-left:20px;}
 
@@ -27,5 +28,8 @@ img{border:0;font-size:0;display:block;}
 #search .search-m form{border:2px solid red;}
 #search .search-m ul li{float: left;font-size: 14px;padding-left: 16px;}
 #search .search-m li a{color:#999999;}
+#search .search-m li a:hover{color:red;}
 #search .search-r{border:2px solid #d8d6d6;margin-left:57px ;margin-top: 30px;width:160px;height:30px;text-align: center;}
+#search .search-r:hover{border:2px solid red;}
 #search .search-r a{color:red;line-height: 30px;}
+

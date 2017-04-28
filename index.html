@@ -724,7 +724,7 @@
 							</dl>
 						</a></li>
 					</ul>
-					<ol class="mainm-b">
+					<ol class="mainm-b clear">
 						<li class="li2"><a href="">
 								<dl>
 									<dt>
@@ -765,6 +765,9 @@
 				</dd>
 			</dl>
 		</div>
+		<div id="indexbannerbox">
+			
+		</div>
 	</body>
 </html>
 <script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
@@ -773,6 +776,7 @@
 	"use strict";
 	$(function(){	
 		$("#indexhead").load("head.html");
+		$("#indexbannerbox").load("footer.html")
 		$(".search-erji>li").mouseover(function(){
 			let index=$(this).index();
 			$(".searchside").css("display","block");

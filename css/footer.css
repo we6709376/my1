@@ -1,0 +1,70 @@
+#banner {
+  width: 100%;
+  background: #f2f2f2; }
+  #banner a {
+    color: #666666; }
+  #banner a:hover {
+    color: red; }
+  #banner .bantop {
+    width: 100%;
+    border-bottom: 2px solid #e5e5e5; }
+    #banner .bantop ul {
+      width: 1200px;
+      margin: 0 auto; }
+    #banner .bantop li {
+      float: left;
+      width: 270px;
+      line-height: 80px;
+      font-size: 16px;
+      color: #666666; }
+  #banner .banmid {
+    width: 100%;
+    font-size: 12px;
+    padding-bottom: 60px; }
+    #banner .banmid .banmidk {
+      padding-top: 44px;
+      width: 1200px;
+      margin: 0 auto; }
+    #banner .banmid ul, #banner .banmid .banmid-l {
+      float: left;
+      width: 160px; }
+    #banner .banmid .banmid-l {
+      margin-left: 110px;
+      margin-top: 20px; }
+      #banner .banmid .banmid-l dd {
+        margin-top: 20px; }
+        #banner .banmid .banmid-l dd img, #banner .banmid .banmid-l dd div {
+          float: left; }
+      #banner .banmid .banmid-l div {
+        margin-left: 10px; }
+      #banner .banmid .banmid-l a {
+        color: red;
+        border-bottom: 1px solid transparent; }
+      #banner .banmid .banmid-l a:hover {
+        border-bottom: 1px solid red; }
+    #banner .banmid .banl1 {
+      font-weight: bold;
+      line-height: 27px;
+      color: black; }
+    #banner .banmid li {
+      line-height: 20px; }
+  #banner .banbot {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 12px; }
+    #banner .banbot dt {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 26px; }
+    #banner .banbot dd {
+      line-height: 20px; }
+      #banner .banbot dd a {
+        margin-right: 5px; }
+    #banner .banbot span {
+      display: block;
+      line-height: 32px;
+      border-top: 2px solid #e3e3e3;
+      color: #666666;
+      padding-bottom: 8px; }
+
+/*# sourceMappingURL=footer.css.map */
