@@ -32,4 +32,7 @@ img{border:0;font-size:0;display:block;}
 #search .search-r{border:2px solid #d8d6d6;margin-left:57px ;margin-top: 30px;width:160px;height:30px;text-align: center;}
 #search .search-r:hover{border:2px solid red;}
 #search .search-r a{color:red;line-height: 30px;}
+#search{
+	padding-bottom: 10px;
+}
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css"/>
+	</head>
+	<body>
+		<div id="headerbox">	
+		</div>
+		<div id="main">
+			<div class="formk">
+				<ul class="registerinput">
+					<li class="clear">
+						<h4>登录</h4>
+						<a href="">短信验证码登录</a>
+					</li>
+					<li class="clear lw">
+						<i class="iconfont icon-denglu"></i>
+						<input type="text" name="dengluid" id="dengluid" value="" />
+						<i class="iconfont icon-erweima"></i>
+					</li>
+					<li class="clear lw">
+						<i class="iconfont icon-denglu1"></i>
+						<input type="password" name="passid" id="passid" value="" />
+					</li>
+					<li class="clear l3">
+						<label><input type="checkbox" name="issave" id="issave" value="" checked="checked" />
+						记住登录状态</label>
+						<a href="">重置密码</a>
+					</li>
+					<li class="libtn">
+						<input type="button" id="submitid" value="登录" />
+					</li>
+				</ul>
+				<ol>
+					<li class="li1">从这里出发,开启乐视生态世界 <a href="">立即注册</a></li>
+					<li><img src="../img/deluimg.jpg"/></li>
+					<li class="li2 clear">
+						<img src="../img/QQqq20170425210319_03 (1).jpg" title="qq"/>
+						<img src="../img/QQqq20170425210319_03 (2).jpg" title="微信"/>
+						<img src="../img/QQqq20170425210319_03 (3).jpg" title="新浪微博"/>
+						<a href="">展开></a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	"use strict";
+	let flag=0;
+	let dengluvalue;
+	$(function(){
+		$("#headerbox").load("submodule.html");
+		dengluvalue=document.cookie;
+		console.log(dengluvalue)
+		if(dengluvalue.length>16){
+			dengluvalue=dengluvalue.substring(9);
+			$("#dengluid").val(dengluvalue);
+		}
+		onloadblur();
+	})
+	$("#submitid").click(function(){
+		if($("#issave:checked").length>0){
+			let d=new Date;
+			d.setDate(d.getDate()+5);
+			document.cookie="dengluid="+$("#dengluid").val()+";expires="+d.toGMTString();
+		}
+	})
+	$("#dengluid").focus(function(){
+		if($(this).val()=="邮箱/手机号"){
+			$(this).val("");
+		}
+		$("#dengluid").css("color","black");
+	})
+	$("#dengluid").blur(function(){
+		onloadblur();
+	})
+	function onloadblur(){
+		if($("#dengluid").val()==""){
+			$("#dengluid").val("邮箱/手机号");
+			$("#dengluid").css("color","#ccc");
+		}else{
+			$("#dengluid").css("color","black");
+		}
+	}
+</script>

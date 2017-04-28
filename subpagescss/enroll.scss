@@ -1,0 +1,81 @@
+#main{
+    width:1280px;
+    height:485px;
+    background: url(../img/operatbg.jpg);
+    ul{
+        padding-top:20px;
+        padding-left: 20px;
+        
+        position: fixed;
+        right:12px;
+        top:132px;
+        width:430px;
+        height:360px;
+        background:white;
+        li{
+            width: 390px;
+            margin-bottom: 12px;
+        }
+        input{
+            outline:none;
+            border: none;
+            height:40px;
+            font-size: 20px;
+        }
+        
+        .li1{
+            line-height: 40px;
+            display: flex;
+            justify-content: space-between;
+            a{
+                color:#21B3E4;
+            }
+            a:hover{
+                color:red;
+            }
+        }
+        .li2,.li3{
+            border: 1px solid #ccc;
+            i{
+                padding:0 10px;
+                font-size:20px;
+                line-height: 40px;
+            }
+        }
+        .li4{
+           input,span{
+                border: 1px solid #ccc;
+                float: left;
+           }
+           span{
+               margin-left: 10px;
+               display: block;
+               width:130px;
+               height:40px;
+           }
+        }
+        .li5{
+            input{
+                width:12px;
+                height:12px;
+            }
+            a{
+                border-bottom:1px solid #21B3E4;
+                color: #21B3E4;
+            }
+            a:hover{
+                color:red;
+            }
+        }
+        .li6{
+            padding-top: 20px;
+            input{
+                width:100%;
+                height:42px;
+                background: #21B3E4;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    }
+}

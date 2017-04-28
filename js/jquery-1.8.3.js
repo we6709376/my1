@@ -9471,3 +9471,17 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 }
 
 })( window );
+jQuery.fn.extend({
+	inputshow:function (str){
+		if(this.val()==""){
+			this.val(str);
+			this.css("color","#ccc");
+		}
+	},
+	inputhide:function(str){
+		if(this.val()==str){
+			this.val("");
+		}
+		this.css("color","black");
+	}
+})
