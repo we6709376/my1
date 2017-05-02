@@ -23,6 +23,8 @@
       line-height: 40px;
       display: flex;
       justify-content: space-between; }
+      #main ul .li1 h5 {
+        font-size: 20px; }
       #main ul .li1 a {
         color: #21B3E4; }
       #main ul .li1 a:hover {

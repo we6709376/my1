@@ -15,6 +15,7 @@
 					<h5>注册</h5>
 					<a href="enter.html">立即登录</a>
 				</li>
+				<li id="hint"></li>
 				<li class="li2 clear">
 					<i class="iconfont icon-denglu"></i>
 					<input type="text" name="textid" id="textid" value="" />
@@ -42,9 +43,10 @@
 <script src="../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	"use strict";
-	let flag=0;
+	let flag1=0,flag2=0,flag3=0;
 	let authcodearr=[];
 	$(function(){
+		$("#hint").css({"color":"red","font-size":"14px"})
 		$("#headerbox").load("submodule.html");
 		$("#textid").val("手机号");
 		$("#textid").css("color","#ccc");
@@ -55,27 +57,50 @@
 		authcodearr=getrandomcode("#codeid");
 	})
 	$("#codeid").click(function(){
+		$("#authcode").val("");
 		authcodearr=getrandomcode(this);
 	})
-	$("#authcode").blur(function(){
-		if(testcode("#authcode",authcodearr)){
-			flag=1;
-		}
-		console.log(flag);
-	})
+
 	$("#passid").one("focus",function(){
 		$(this).val("");
 		$(this).css("color","black");
-		this.type="password";
+	})
+	$("#passid").blur(function(){
+		
+		let str=$(this).val();
+		let reg=/\w{6}$/;
+		if(reg.test(str)){
+			$("#hint").html("");
+		}
+		if(!reg.test(str)&&str.length>0){
+			$("#hint").html("密码格式错误，密码格式为6-16位字母/数字/符号，不可设置为常见简单弱密码");
+		}
+		//console.log(flag2);
 	})
 	$("#authcode").blur(function(){
 		$(this).inputshow("输入验证码");
+		if(testcode("#authcode",authcodearr)){
+			$("#hint").html("");
+		}
+		if(!testcode("#authcode",authcodearr)&&$(this).val()!="输入验证码"){
+			$("#hint").html("图片验证码不正确");
+		}
 	})
 	$("#authcode").focus(function(){
 		$(this).inputhide("输入验证码");
 	})
 	$("#textid").blur(function(){
+		let valstr=$(this).val();
 		$(this).inputshow("手机号");
+		let reg=/^1[34578]\d{9}$/g;
+		if(reg.test(valstr)&&(valstr.length==11)){
+			$("#hint").html("");
+			return ;
+		}
+		if(valstr.length>0){
+			$("#hint").html("请输入正确的手机号")
+		}
+		//console.log(flag1);
 	})
 	$("#textid").focus(function(){
 		$(this).inputhide("手机号");

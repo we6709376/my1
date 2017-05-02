@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shoppingcart.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commstyle.css"/>
+	</head>
+	<body>
+		<div id="shopheader">
+			<ul class="clear">
+				<li><a href="sub1page/enter.html">登录</a></li>
+				<li>|</li>
+				<li><a href="sub1page/enroll.html">注册</a></li>
+				<li><a href="">帮助中心</a></li>
+			</ul>
+		</div>
+		<div id="shopmain" class="clear">
+			<img src="img/logo.jpg"/>
+			<ul class="clear">
+				<li>
+					<dl>
+						<dt>
+							<div>1</div>
+							<div class="rightwire ys1"></div>
+						</dt>
+						<dd>我的购物车</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt  class=" ys2">
+							<div class="leftwire ys2"></div>
+							<div>2</div>
+							<div class="rightwire ys2"></div>
+						</dt>
+						<dd>填写核对订单信息</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt  class=" ys2">
+							<div>3</div>
+							<div class="leftwire ys2"></div>
+						</dt>
+						<dd>成功提交订单</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div id="shopmian">
+			<div class="noshop clear">
+				<img src="img/shopg.jpg"/>
+				<dl>
+					<dt>你的购物车还是空的！<br>
+						<a href="">登录</a>
+						赶紧行动吧！
+					</dt>
+					<dd>
+						<a href="">马上去购物</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div id="shopshow">
+		 <div class="shopshowk">
+			<h4>猜你喜欢</h4>
+			<ul class="clear">
+				<li>
+					<dl>
+						<dt><img src="img/shop1.jpg"/></dt>
+						<dd>
+							Leme蓝牙耳机(红色)中...<br>
+							<span>￥99.00</span>
+							<a class="add1 shopclick" >加入购物车</a>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/shop4.jpg"/></dt>
+						<dd>乐视超级头盔<br>
+							<span>￥99.00</span><span class="noprice">￥1999.00</span>
+							<a class="add2 shopclick" >加入购物车</a>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/shop3.jpg"/></dt>
+						<dd>
+							乐视反戴耳机 黑色<br>
+							<span>$39.00</span>
+							<span class="noprice">￥49.00</span>
+							<a class="add3 shopclick" >加入购物车</a>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/shop2.jpg"/></dt>
+						<dd>
+							超能大白U盘<br>
+							<span>￥121.00</span>
+							<span class="noprice">￥188.00</span>
+							<a class="add4 shopclick" >加入购物车</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+		 </div>
+		</div>
+		<div id="footerbox"></div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#footerbox").load("footer.html")
+		$(".shopshowk>ul>li>dl").mouseenter(function(){
+			$(this).stop();
+			let index=$(".shopshowk>ul>li>dl").index(this);
+			adda(index,0);
+		})
+		$(".shopshowk>ul>li>dl").mouseleave(function(){
+			let index=$(".shopshowk>ul>li>dl").index(this);
+			adda(index,-30);
+			$(this).stop();
+		})
+		$(".shopclick").click(function(){
+			$(".noshop").css("display","none");
+		})
+	})
+	function adda(index,distance){
+		$(".add"+(index+1)).animate({
+			"bottom": distance+"px"
+		},100)
+	}
+</script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/details.css"/>
+	</head>
+	<body>
+		<div id="indexhead">
+			
+		</div>
+		<div id="detailssearch" class="clear">
+			<ul class="s-l">
+				<li><a href="">cool1 dual</a></li>
+				<li class="li2"><a href="">在线咨询</a></li>
+			</ul>
+			<ul class="s-r">
+				<li class="li1"><a href="">概述</a></li>
+				<li><a href="">双摄</a></li>
+				<li><a href="">功能</a></li>
+				<li><a href="">EUI</a></li>
+				<li><a href="">参数</a></li>
+				<li><a href="">评价晒单</a></li>
+				<li><a href="">乐码通道</a></li>
+				<li class="li7"><a href="">立即购买</a></li>
+			</ul>
+		</div>
+		<div id="detailsmian">
+			<dl class="main-top clear">
+				<dt>
+					<ul>
+						<li class="li1"><img src="img/dm1.jpg"/></li>
+						<li class="li2">LeEco inside</li>
+						<li class="li3">真双摄 酷生态</li>
+						<li class="li4">一款双1300万后置摄像头生态手机</li>
+						<li class="li5"><img src="img/dm2.jpg"/></li>
+						<li class="li6"><input type="button" id="detailsbtn" value="立即购买" /></li>
+						<li class="li7"><a href="">产品视频</a></li>
+					</ul>
+				</dt>
+				<dd>
+					<img src="img/dmr.jpg"/>
+				</dd>
+			</dl>
+		</div>
+		<div id="introduce">
+			<ul class="clear">
+				<li>
+					<dl>
+						<dt><img src="img/dmm1.jpg" alt="" /></dt>
+						<dd>1300万6P双摄</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm2.jpg" alt="" /></dt>
+						<dd>高通旗帜 MSM8976</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm3.jpg" alt="" /></dt>
+						<dd>4060mAh(typ)超大容量电池</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm4.jpg" alt="" /></dt>
+						<dd>4GB+64GB储存</dd>
+					</dl>
+				</li>
+			</ul>
+			<ul class="clear">
+				<li>
+					<dl>
+						<dt><img src="img/dmm5.jpg" alt="" /></dt>
+						<dd>超酷5.5时全高清大屏</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm6.jpg" alt="" /></dt>
+						<dd>全网通4G+、VolTE</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm7.jpg" alt="" /></dt>
+						<dd>生态系统</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><img src="img/dmm8.jpg" alt="" /></dt>
+						<dd>乐次元影视会员权益</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div id="mainbotimg">
+			<img src="img/dmt.jpg"/>
+		</div>
+		<div id="footerbox"></div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	"use strict";
+	let mytimer
+	$(function(){
+		$("#indexhead").load("head.html");
+		$("#footerbox").load("footer.html");
+		mytimer=setInterval(chexksearch,10);
+		
+	})
+	function chexksearch(){
+		if($(".search-erji").length>0){
+			clearInterval(mytimer);
+			return erjisearchjs();
+		}
+	}
+	function erjisearchjs(){
+		$(".search-erji").css("display","none");
+		$(".searchl>.li1").mouseover(function(){
+			erjishow();
+		});
+		$(".searchl>.li1").mouseout(function(){
+			erjihide();
+		});
+		$(".search-erji").mouseover(function(){
+			erjishow();
+		});
+		$(".search-erji").mouseout(function(){
+			erjihide();
+		});
+		$(".searchside").mouseover(function(){
+			erjishow();
+		});
+		$(".searchside").mouseout(function(){
+			erjihide();
+		});
+	}
+	function erjishow(){
+		$(".search-erji").css("display","block");
+	}
+	function erjihide(){
+		$(".search-erji").css("display","none");
+	}
+</script>

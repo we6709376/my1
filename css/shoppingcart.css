@@ -1,0 +1,129 @@
+#shopheader {
+  width: 100%;
+  height: 34px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7; }
+  #shopheader a {
+    color: #999999; }
+  #shopheader a:hover {
+    color: red; }
+  #shopheader ul {
+    margin-left: 940px; }
+    #shopheader ul li {
+      float: left;
+      padding: 0 5px;
+      line-height: 34px; }
+
+#shopmain {
+  width: 100%; }
+  #shopmain img, #shopmain ul {
+    float: left; }
+  #shopmain img {
+    margin-left: 130px;
+    margin-top: 20px;
+    width: 420px;
+    height: 45px; }
+  #shopmain ul {
+    margin-top: 35px;
+    margin-left: 180px; }
+    #shopmain ul li {
+      float: left; }
+      #shopmain ul li dl {
+        width: 140px;
+        text-align: center;
+        position: relative; }
+        #shopmain ul li dl dt {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin: 0 auto;
+          background: #3393f2;
+          color: white; }
+          #shopmain ul li dl dt .rightwire {
+            position: absolute;
+            width: 61px;
+            height: 2px;
+            right: 0;
+            top: 9px; }
+          #shopmain ul li dl dt .leftwire {
+            position: absolute;
+            width: 61px;
+            height: 2px;
+            left: 0;
+            top: 9px; }
+        #shopmain ul li dl .ys1 {
+          background: #3393f2; }
+        #shopmain ul li dl .ys2 {
+          background: #cccccc; }
+
+#shopmian {
+  width: 100%; }
+  #shopmian .noshop {
+    padding: 250px 0 100px 370px; }
+    #shopmian .noshop img, #shopmian .noshop dl {
+      float: left; }
+    #shopmian .noshop dl {
+      margin-left: 50px; }
+      #shopmian .noshop dl dt {
+        font-size: 24px;
+        line-height: 45px; }
+        #shopmian .noshop dl dt a {
+          color: black; }
+        #shopmian .noshop dl dt a:hover {
+          color: red; }
+      #shopmian .noshop dl dd {
+        margin-top: 30px; }
+        #shopmian .noshop dl dd a {
+          display: block;
+          width: 120px;
+          text-align: center;
+          height: 25px;
+          line-height: 25px;
+          color: white;
+          background: red;
+          border-radius: 5px; }
+
+#shopshow {
+  width: 100%; }
+  #shopshow .shopshowk {
+    width: 1000px;
+    height: 338px;
+    margin: 0 auto;
+    border-top: 1px solid #ebebeb;
+    background: #f6f6f6; }
+    #shopshow .shopshowk h4 {
+      font-size: 16px;
+      line-height: 60px; }
+    #shopshow .shopshowk ul {
+      padding-bottom: 20px; }
+      #shopshow .shopshowk ul li {
+        float: left;
+        margin: 0 20px; }
+      #shopshow .shopshowk ul dl {
+        background: white;
+        overflow: hidden; }
+        #shopshow .shopshowk ul dl dt img {
+          width: 200px;
+          height: 200px; }
+        #shopshow .shopshowk ul dl dd {
+          position: relative;
+          padding-left: 10px;
+          width: 190px;
+          height: 80px; }
+          #shopshow .shopshowk ul dl dd span {
+            line-height: 20px; }
+          #shopshow .shopshowk ul dl dd .noprice {
+            color: #999999;
+            text-decoration: line-through; }
+          #shopshow .shopshowk ul dl dd a {
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            background: red;
+            left: 0;
+            bottom: -30px; }
+
+/*# sourceMappingURL=shoppingcart.css.map */
