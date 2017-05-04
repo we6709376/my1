@@ -18,10 +18,17 @@
 				<li><a href="">销售联盟</a></li>
 			</ul>
 			<ul class="header-r">
-				<li><a href="sub1page/enter.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="sub1page/enroll.html">注册</a></li>
+				<li id="dling"><a href="sub1page/enter.html" >登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="sub1page/enroll.html">注册</a></li>
 				<li><a href="">乐迷俱乐部</a></li>
 				<li><a href="">我的订单</a></li>
-				<li><a href="">帮助中心</a></li>
+				<li id="bzxl"><a href="">帮助中心</a>
+					<ol id="bzej">
+						<li><a href="">配送安装</a></li>
+						<li><a href="">售后服务</a></li>
+						<li><a href="">运费标准</a></li>
+						<li><a href="">联系客服</a></li>
+					</ol>
+				</li>
 				<li><a href="">生态导航</a></li>
 				<li><a href="">手机版</a></li>
 			</ul>
@@ -44,7 +51,7 @@
 		 		</ul>
 		 	</div>
 		 	<div class="search-r">
-		 		<a href="">购物车</a>
+		 		<a href="shoppingcart.html">购物车</a>
 		 	</div>
 		 </div>
 		 <div id="banner">
@@ -61,7 +68,7 @@
 					<li><a href="">问一问</a></li>
 				</ol>
 				<ol class="search-erji">
-					<li><a href="">超级电视</a></li>
+					<li><a href="secondarypage.html">超级电视</a></li>
 					<li><a href="">超级手机</a></li>
 					<li><a href="">酷派手机</a></li>
 					<li><a href="">智能硬件</a></li>
@@ -650,6 +657,11 @@
 <script type="text/javascript">
 	$(function(){
 		$("#inptext").css("color","#ccc");
+		dengluvalue=document.cookie;
+		if(dengluvalue.length>16){
+			dengluvalue=dengluvalue.substring(9);
+			$("#dling").val(dengluvalue+"欢迎你登录");
+		}
 	})
 	$("#inptext").blur(function(){
 		if($(this).val()==""){
@@ -689,4 +701,16 @@
 		$(".search-erji>li:eq("+index+")>a").css("color","#AAAAAB");
 		$(this).css({"display":"none"})	
 	});
+	$("#bzxl").mouseenter(function(){
+		$("#bzej").stop();
+		$("#bzej").animate({
+			"height":"100px"
+		},500);
+	})
+	$("#bzxl").mouseleave(function(){
+		$("#bzej").stop();
+		$("#bzej").animate({
+			"height":"0px"
+		},500);
+	})
 </script>

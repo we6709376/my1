@@ -61,6 +61,23 @@
 					</dd>
 				</dl>
 			</div>
+			<div id="shopcartshow">
+				<div class="shopcartshowtop clear">
+					<h4>全部商品</h4>
+					<span id="showshopnum">
+					</span>
+					<ul>
+						<li>配送至</li>
+						<li id="sendadress"><a href="">北京北京市朝阳区</a></li>
+					</ul>
+				</div>
+				<div class="shopcartshowtitle">
+					<table id="shoptable" border="" cellspacing="" cellpadding="">
+						<tr><td id="checkall"><label><input type="checkbox" name="" id="" value="" /> 全选</label></td><td>商品</td><td>单价(元)</td><td>数量</td><td>小计(元)</td><td>操作</td></tr>
+					</table>
+					<div class="aggregatewz">总计:<span class="aggregate"></span></div>
+				</div>
+			</div>
 		</div>
 		<div id="shopshow">
 		 <div class="shopshowk">
@@ -70,18 +87,18 @@
 					<dl>
 						<dt><img src="img/shop1.jpg"/></dt>
 						<dd>
-							Leme蓝牙耳机(红色)中...<br>
-							<span>￥99.00</span>
-							<a class="add1 shopclick" >加入购物车</a>
+							<p>Leme蓝牙耳机(红色)中...</p>
+							<i>￥99.00</i>
+							<a class="shopclick" >加入购物车</a>
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
 						<dt><img src="img/shop4.jpg"/></dt>
-						<dd>乐视超级头盔<br>
-							<span>￥99.00</span><span class="noprice">￥1999.00</span>
-							<a class="add2 shopclick" >加入购物车</a>
+						<dd><p>乐视超级头盔</p>
+							<i>￥99.00</i><span class="noprice">￥1999.00</span>
+							<a class="shopclick" >加入购物车</a>
 						</dd>
 					</dl>
 				</li>
@@ -89,10 +106,10 @@
 					<dl>
 						<dt><img src="img/shop3.jpg"/></dt>
 						<dd>
-							乐视反戴耳机 黑色<br>
-							<span>$39.00</span>
+							<p>乐视反戴耳机 黑色</p>
+							<i>$39.00</i>
 							<span class="noprice">￥49.00</span>
-							<a class="add3 shopclick" >加入购物车</a>
+							<a class="shopclick" >加入购物车</a>
 						</dd>
 					</dl>
 				</li>
@@ -100,10 +117,10 @@
 					<dl>
 						<dt><img src="img/shop2.jpg"/></dt>
 						<dd>
-							超能大白U盘<br>
-							<span>￥121.00</span>
+							<p>超能大白U盘</p>
+							<i>￥121.00</i>
 							<span class="noprice">￥188.00</span>
-							<a class="add4 shopclick" >加入购物车</a>
+							<a class="shopclick" >加入购物车</a>
 						</dd>
 					</dl>
 				</li>
@@ -116,8 +133,73 @@
 <script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	$(function(){
-		$("#footerbox").load("footer.html")
-		$(".shopshowk>ul>li>dl").mouseenter(function(){
+		$("#footerbox").load("footer.html");
+		$(".shopclick").click(function(){
+			let index=$(".shopclick").index(this);
+			let objad=$("#shopshow dl:eq("+index+")").selector;
+			//let imgct=$(objad+">dt").html();
+			let json1={
+				img:$(objad+">dt").html(),
+				name:$(objad+">dd>p").html(),
+				price:"￥"+$(objad+">dd>i").html().substring(1)
+			}
+			addshow(json1,$("#shoptable"));
+			addtpri();
+		})
+		
+		
+	})
+	function addshow(json,jqobj){
+		$(".noshop").css("display","none");
+		$("#shopcartshow").css("display","block");
+		let str="<tr><td><input type='checkbox'></td><td>"+json.img+json.name+"</td><td class='pri'>"+json.price+"</td><td><input  type='button' value=' - '><input  type='text' value='1'><input  type='button' value=' + '></td>><td  class='tpri'>"+json.price+"</td><td><input type='button' id='remove' value='删除'></td></tr>";
+		$(jqobj).append(str);
+	}
+	$("#shoptable").delegate("input[value='删除']","click",function(){
+		$(this).parent().parent().remove();
+		addtpri();
+	})
+	$("#shoptable").delegate("input[value=' - ']","click",function(){
+		let jqobj=$(this).parent().children("[type='text']");
+		if(jqobj.val()>1){
+			jqobj.val(jqobj.val()-1);
+			let pri=$(this).parent().parent().children(".pri").html();
+			pri=parseInt(pri.substring(1));
+			$(this).parent().parent().children(".tpri").html("￥"+pri*parseInt(jqobj.val()));
+			addtpri();
+		}
+	})
+	$("#shoptable").delegate("input[value=' + ']","click",function(){
+		let jqobj=$(this).parent().children("[type='text']");
+		if(jqobj.val()<6){
+			jqobj.val(parseInt(jqobj.val())+1);
+			let pri=$(this).parent().parent().children(".pri").html();
+			pri=parseInt(pri.substring(1));
+			$(this).parent().parent().children(".tpri").html("￥"+pri*parseInt(jqobj.val()));
+			addtpri();
+		}
+	})
+	function addtpri(){
+		let jqobj=$("#shoptable tr").children(".tpri");
+		if(jqobj.length>0){
+			let num=0;
+			jqobj.each(function(){
+				num+=parseInt($(this).html().substring(1));
+			})
+			$(".aggregate").html("￥"+num);
+		}else{
+			$("#shopcartshow").css("display","none");
+			$(".noshop").css("display","block");
+		}
+	}
+		
+	
+/*	function adda(index,distance){
+		$(".add"+(index+1)).animate({
+			"bottom": distance+"px"
+		},100)
+	}*/
+	/*$(".shopshowk>ul>li>dl").mouseenter(function(){
 			$(this).stop();
 			let index=$(".shopshowk>ul>li>dl").index(this);
 			adda(index,0);
@@ -129,11 +211,5 @@
 		})
 		$(".shopclick").click(function(){
 			$(".noshop").css("display","none");
-		})
-	})
-	function adda(index,distance){
-		$(".add"+(index+1)).animate({
-			"bottom": distance+"px"
-		},100)
-	}
+		})*/
 </script>

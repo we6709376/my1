@@ -22,7 +22,7 @@
 				</li>
 				<li class="li3 clear">
 					<i class="iconfont icon-denglu1"></i>
-					<input type="text" name="passid" id="passid" value="" />
+					<input type="password" name="passid" id="passid" value="" />
 				</li>
 				<li class="li4 clear">
 					<input type="text" name="" id="authcode" value="" />
@@ -49,28 +49,39 @@
 		$("#hint").css({"color":"red","font-size":"14px"})
 		$("#headerbox").load("submodule.html");
 		$("#textid").val("手机号");
-		$("#textid").css("color","#ccc");
-		$("#passid").val("密码");
-		$("#passid").css("color","#ccc")
+		$("#textid").css("color","#ccc")
 		$("#authcode").val("输入验证码");
 		$("#authcode").css("color","#ccc");
 		authcodearr=getrandomcode("#codeid");
+		$("#submit").click(function(){
+			if((flag1+flag2+flag3)==0){
+				$.post("../sub1page.php",{"useid":$("#textid").val(),"usepass":$("#passid").val(),function(){
+					let d=new Date;
+					d.setDate(d.getDate()+5);
+					document.cookie="dengluid="+$("#textid").val()+";expires="+d.toGMTString();
+					location.href="../index.html";
+				}})
+			}else if(flag1==1){
+				$("#textid").focus();
+			}else if(flag2==1){
+				$("#passid").focus();
+			}else if(flag3==1){
+				$("#authcode").focus();
+			}
+		})
 	})
 	$("#codeid").click(function(){
 		$("#authcode").val("");
 		authcodearr=getrandomcode(this);
 	})
-
-	$("#passid").one("focus",function(){
-		$(this).val("");
-		$(this).css("color","black");
-	})
 	$("#passid").blur(function(){
-		
+		flag2=1;
 		let str=$(this).val();
 		let reg=/\w{6}$/;
 		if(reg.test(str)){
+			flag2=0;
 			$("#hint").html("");
+			Prompterror();
 		}
 		if(!reg.test(str)&&str.length>0){
 			$("#hint").html("密码格式错误，密码格式为6-16位字母/数字/符号，不可设置为常见简单弱密码");
@@ -78,9 +89,12 @@
 		//console.log(flag2);
 	})
 	$("#authcode").blur(function(){
+		flag3=1;
 		$(this).inputshow("输入验证码");
 		if(testcode("#authcode",authcodearr)){
+			flag3=0;
 			$("#hint").html("");
+			Prompterror();
 		}
 		if(!testcode("#authcode",authcodearr)&&$(this).val()!="输入验证码"){
 			$("#hint").html("图片验证码不正确");
@@ -90,19 +104,38 @@
 		$(this).inputhide("输入验证码");
 	})
 	$("#textid").blur(function(){
+		flag1=1;
 		let valstr=$(this).val();
 		$(this).inputshow("手机号");
 		let reg=/^1[34578]\d{9}$/g;
 		if(reg.test(valstr)&&(valstr.length==11)){
-			$("#hint").html("");
+			flag1=0;
+			$.get("../enter1.php",{"textid":$("#textid").val()},
+			function(date){
+				if(date=="0"){
+					$("#hint").html("");
+				}else{
+					$("#hint").html("此用户名已被注册");
+				}
+			})
+			Prompterror()
 			return ;
 		}
-		if(valstr.length>0){
-			$("#hint").html("请输入正确的手机号")
+		if(valstr.length>0&&!reg.test(valstr)){
+			$("#hint").html("请输入正确的手机号");
 		}
-		//console.log(flag1);
 	})
 	$("#textid").focus(function(){
 		$(this).inputhide("手机号");
 	})
+	function  Prompterror(){
+		if(flag1==1){
+			$("#hint").html("请输入正确的手机号");
+		}else if(flag2==1){
+			$("#hint").html("密码格式错误，密码格式为6-16位字母/数字/符号，不可设置为常见简单弱密码");
+		}else if(flag3==1){
+			$("#hint").html("图片验证码不正确");
+		}
+	
+	}
 </script>

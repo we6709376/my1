@@ -1,3 +1,6 @@
+i {
+  font-style: normal; }
+
 #shopheader {
   width: 100%;
   height: 34px;
@@ -82,6 +85,52 @@
           color: white;
           background: red;
           border-radius: 5px; }
+  #shopmian #shopcartshow {
+    display: none;
+    padding-top: 20px;
+    width: 1000px;
+    margin: 0 auto;
+    color: #666666; }
+    #shopmian #shopcartshow .shopcartshowtop {
+      border: 1px solid #ececec;
+      line-height: 50px; }
+      #shopmian #shopcartshow .shopcartshowtop h4 {
+        margin-left: 20px;
+        float: left;
+        color: red; }
+      #shopmian #shopcartshow .shopcartshowtop ul {
+        float: right;
+        margin-right: 5px; }
+        #shopmian #shopcartshow .shopcartshowtop ul li {
+          float: left;
+          margin-right: 16px; }
+        #shopmian #shopcartshow .shopcartshowtop ul #sendadress a {
+          padding: 10px 18px;
+          border: 1px solid #ececec;
+          color: #666666; }
+    #shopmian #shopcartshow .shopcartshowtitle {
+      line-height: 36px;
+      background: #f9f9f9; }
+      #shopmian #shopcartshow .shopcartshowtitle table {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #666; }
+        #shopmian #shopcartshow .shopcartshowtitle table label {
+          width: 20px;
+          height: 20px; }
+        #shopmian #shopcartshow .shopcartshowtitle table input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          vertical-align: middle; }
+        #shopmian #shopcartshow .shopcartshowtitle table input[type="text"] {
+          width: 20px; }
+        #shopmian #shopcartshow .shopcartshowtitle table td {
+          border: none; }
+        #shopmian #shopcartshow .shopcartshowtitle table img {
+          width: 100px;
+          height: 100px; }
+      #shopmian #shopcartshow .shopcartshowtitle .aggregatewz {
+        margin-left: 800px; }
 
 #shopshow {
   width: 100%; }
@@ -98,7 +147,16 @@
       padding-bottom: 20px; }
       #shopshow .shopshowk ul li {
         float: left;
-        margin: 0 20px; }
+        margin: 0 20px;
+        border: 1px solid white; }
+      #shopshow .shopshowk ul li:hover .shopclick {
+        bottom: 0px; }
+      #shopshow .shopshowk ul li:hover {
+        border: 1px solid red; }
+      #shopshow .shopshowk ul p {
+        color: #ccc; }
+      #shopshow .shopshowk ul p:hover {
+        color: red; }
       #shopshow .shopshowk ul dl {
         background: white;
         overflow: hidden; }
@@ -115,7 +173,8 @@
           #shopshow .shopshowk ul dl dd .noprice {
             color: #999999;
             text-decoration: line-through; }
-          #shopshow .shopshowk ul dl dd a {
+          #shopshow .shopshowk ul dl dd .shopclick {
+            transition: all 0.5s linear;
             text-align: center;
             line-height: 30px;
             color: white;

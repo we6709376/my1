@@ -177,9 +177,29 @@
 <script type="text/javascript" src="js/lunbo.js"></script>
 <script type="text/javascript">
 	"use strict";
+	let mytimer;
 	$(function(){	
 		$("#indexhead").load("head.html");
 		$("#indexbannerbox").load("footer.html")
+		//mytimer=setInterval(checkdling,10);
+		//Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id)
+		let lun=new Shufflingfigure(1263,510,4,8,20,"#bannerimg");
+	})
+	/*
+	function checkdling(){
+		if($("#dling").length>0){
+			clearInterval(mytimer);
+			return change();
+		}
+	}
+	function change(){
+		let dengluvalue=document.cookie;
+		if(dengluvalue.length>16){
+			dengluvalue=dengluvalue.substring(9);
+			$("#dling").val(dengluvalue);
+		}
+	}
+	*/
 		/*$(".search-erji>li").mouseover(function(){
 			let index=$(this).index();
 			$(".searchside").css("display","block");
@@ -207,13 +227,6 @@
 			$(".search-erji>li:eq("+index+")>a").css("color","#AAAAAB");
 			$(this).css({"display":"none"})	
 		});*/
-		
-		//Shufflingfigure(boxwidth,boxheight,imgnum,leftinc,speed,id)
-		let lun=new Shufflingfigure(1263,510,4,8,20,"#bannerimg");
-	})
-	
-	
-	
-	
-	
 </script>
+
+		

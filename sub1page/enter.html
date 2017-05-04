@@ -21,15 +21,18 @@
 						<input type="text" name="dengluid" id="dengluid" value="" />
 						<i class="iconfont icon-erweima"></i>
 					</li>
+					<li id="tishi"></li>
 					<li class="clear lw">
 						<i class="iconfont icon-denglu1"></i>
 						<input type="password" name="passid" id="passid" value="" />
 					</li>
+					<li id="mmtishi"></li>
 					<li class="clear l3">
 						<label><input type="checkbox" name="issave" id="issave" value="" checked="checked" />
 						记住登录状态</label>
 						<a href="">重置密码</a>
 					</li>
+					
 					<li class="libtn">
 						<input type="button" id="submitid" value="登录" />
 					</li>
@@ -56,7 +59,6 @@
 	$(function(){
 		$("#headerbox").load("submodule.html");
 		dengluvalue=document.cookie;
-		console.log(dengluvalue)
 		if(dengluvalue.length>16){
 			dengluvalue=dengluvalue.substring(9);
 			$("#dengluid").val(dengluvalue);
@@ -64,11 +66,25 @@
 		onloadblur();
 	})
 	$("#submitid").click(function(){
-		if($("#issave:checked").length>0){
-			let d=new Date;
-			d.setDate(d.getDate()+5);
-			document.cookie="dengluid="+$("#dengluid").val()+";expires="+d.toGMTString();
-		}
+		$.post("../entercheck.php",{"useid":$("#dengluid").val(),"usepass":$("#passid").val()},
+		function(a){
+			if(a==1){
+				let d=new Date;
+				d.setDate(d.getDate()+5);
+				document.cookie="dengluid="+$("#dengluid").val()+";expires="+d.toGMTString();
+				location.href="../index.html";
+			}else{
+				$("#mmtishi").html("密码输入错误");
+			}
+		});
+	})
+	$("#dengluid").blur(function(){
+		$.get("../entername.php",{"textid":$("#dengluid").val()},
+			function(date){
+				if(date=="0"){
+					$("#tishi").html("此用户名不存在");
+				}
+			})
 	})
 	$("#dengluid").focus(function(){
 		if($(this).val()=="邮箱/手机号"){
